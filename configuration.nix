@@ -40,7 +40,7 @@
   extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
   home = /home/jason;
   initialPassword = "changeme";
-}
+};
 
 
   # Install firefox.
