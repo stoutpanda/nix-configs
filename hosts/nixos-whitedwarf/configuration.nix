@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs,  ... }:
+{ config, pkgs, inputs, chaotic,  ... }:
 
 {
   imports =
@@ -16,9 +16,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
+  # Default kernal
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
+ 
+  #chaotic zen kernel
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  services.scx.enable = true; # Uses scx_rustland by default
+  programs.gamemode.enable = true; 
   boot.initrd.luks.devices."luks-0a3129ec-d9a5-4676-9db3-8d35bb241213".device = "/dev/disk/by-uuid/0a3129ec-d9a5-4676-9db3-8d35bb241213";
   networking.hostName = "nixos-whitedwarf"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -59,5 +63,19 @@
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
+  };
+
+  # Enable Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
+
+  # Enable 32-bit support for Steam
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
   };
 }	
