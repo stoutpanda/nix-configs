@@ -38,15 +38,18 @@
   isNormalUser = true;
   description = "jason";
   extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
-  home = /home/jason;
+  createHome = true;
   initialPassword = "changeme";
+     packages = with pkgs; [
+      kdePackages.kate
+    ];
+  
 };
 
 
   # Install firefox.
   programs.firefox.enable = true;
   # fish / bash 
-  programs.bash.enable = true;
   programs.fish.enable = true; 
 
   # Allow unfree packages
@@ -58,6 +61,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
+    home-manager
   ];
   
   #experimental features

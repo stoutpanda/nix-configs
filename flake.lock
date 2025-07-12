@@ -626,6 +626,10 @@
     },
     "root": {
       "inputs": {
+        "agenix": [
+          "home-manager-config",
+          "agenix"
+        ],
         "chaotic": [
           "home-manager-config",
           "chaotic"

@@ -14,31 +14,19 @@
     chaotic.follows = "home-manager-config/chaotic";
     #nixos hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";         
-   agenix.follows = "home-manager-config/agenix"; 
+    agenix.follows = "home-manager-config/agenix"; 
   };
-  
-  outputs = { self, nixpkgs, lix-module, home-manager, home-manager-config, chaotic, nixos-hardware, agenix, ... }@inputs: {
+  outputs = { self, nixpkgs, lix-module,  nixos-hardware, home-manager, home-manager-config, chaotic, agenix, ... }@inputs: {
     nixosConfigurations.nixos-whitedwarf = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         lix-module.nixosModules.default
-        home-manager.nixosModules.home-manager
         { nixpkgs.overlays = [ chaotic.overlays.default ]; }
 	agenix.nixosModules.default
         ./configuration.nix 
         ./hosts/nixos-whitedwarf/configuration.nix
-        {	
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.backupFileExtension = "backup";
-	  home-manager.sharedModules = [
-              agenix.homeManagerModules.default
-            ];
-
-	  home-manager.users.jason = home-manager-config.homeConfigurations.jason.config;	
-        }
+         
       ];
     };
-  };
+};
 }
