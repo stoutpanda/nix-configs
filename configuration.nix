@@ -45,7 +45,8 @@
   
 };
 
-
+  #make user trusted for flakes. 
+  nix.settings.trusted-users = [ "root" "@wheel" ];
   # Install firefox.
   programs.firefox.enable = true;
   # fish / bash 
