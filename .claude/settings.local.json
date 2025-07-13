@@ -9,7 +9,8 @@
       "WebFetch(domain:wiki.hypr.land)",
       "mcp__nixos__nixos_info",
       "Bash(grep:*)",
-      "mcp__nixos__home_manager_search"
+      "mcp__nixos__home_manager_search",
+      "Bash(sudo blkid:*)"
     ],
     "deny": []
   }
