@@ -55,7 +55,7 @@
     cliphist
 
     # File management
-    dolphin
+    kdePackages.dolphin
 
     # Terminal
     kitty
@@ -71,15 +71,16 @@
     # Network management applet
     networkmanagerapplet
 
+    # Bluetooth management
+    blueman
+
     # Power management
     upower
 
     # GTK theme management
     gtk3
     gtk4
-    qt5.qtwayland
     qt6.qtwayland
-    libsForQt5.qt5ct
     qt6Packages.qt6ct
 
     # Notification daemon dependencies

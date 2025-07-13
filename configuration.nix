@@ -39,6 +39,7 @@
   extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
   createHome = true;
   initialPassword = "changeme";
+  shell = pkgs.fish;
      packages = with pkgs; [
     ];
   
@@ -48,7 +49,12 @@
   # Install firefox.
   programs.firefox.enable = true;
   # fish / bash 
-  programs.fish.enable = true; 
+  programs.fish.enable = true;
+
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true; 
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

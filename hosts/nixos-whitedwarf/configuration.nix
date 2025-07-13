@@ -77,4 +77,20 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
+  # Mount microSD card for Steam
+  fileSystems."/mnt/steam" = {
+    device = "/dev/disk/by-uuid/f5790dae-cd49-437c-9de7-49cc8c40981a";
+    fsType = "f2fs";
+    options = [ 
+      "defaults"
+      "x-systemd.automount"
+      "x-systemd.device-timeout=10"
+    ];
+  };
+
+  # Ensure proper permissions on the mount point
+  systemd.tmpfiles.rules = [
+    "d /mnt/steam 0775 jason users -"
+  ];
+
 }
