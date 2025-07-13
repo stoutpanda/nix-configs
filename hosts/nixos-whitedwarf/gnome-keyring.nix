@@ -17,7 +17,7 @@
   };
   
   # Ensure D-Bus is available for keyring communication
-  services.dbus.packages = [ pkgs.gnome.gnome-keyring ];
+  services.dbus.packages = [ pkgs.gnome-keyring ];
   
   # Optional: Add gcr for certificate/key prompts
   environment.systemPackages = with pkgs; [
