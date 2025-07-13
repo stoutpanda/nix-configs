@@ -16,6 +16,7 @@
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.asus-zephyrus-ga402x-nvidia
     ../../modules/hyprland.nix
+    ./gnome-keyring.nix
   ];
 
   # Bootloader.
