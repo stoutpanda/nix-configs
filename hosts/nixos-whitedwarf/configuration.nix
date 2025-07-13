@@ -15,7 +15,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.asus-zephyrus-ga402x-nvidia
-    ../../modules/kde.nix
+    ../../modules/hyprland.nix
   ];
 
   # Bootloader.

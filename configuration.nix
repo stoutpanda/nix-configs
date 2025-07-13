@@ -30,7 +30,6 @@
     description = "nixos";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
     ];
   };
   
@@ -41,7 +40,6 @@
   createHome = true;
   initialPassword = "changeme";
      packages = with pkgs; [
-      kdePackages.kate
     ];
   
 };
