@@ -93,5 +93,13 @@
   systemd.tmpfiles.rules = [
     "d /mnt/steam 0775 jason users -"
   ];
+ 
+  # enable printer discovery
+services.avahi = {
+  enable = true;
+  nssmdns4 = true;
+  openFirewall = true;
+};
+
 
 }
