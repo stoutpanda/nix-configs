@@ -27,7 +27,7 @@
   # Session variables
   environment.sessionVariables = {
     # If cursor invisible
-    WLR_NO_HARDWARE_CURSORS = "1";
+    # WLR_NO_HARDWARE_CURSORS = "1";
     # Hint electron apps to use wayland
     NIXOS_OZONE_WL = "1";
   };
@@ -43,37 +43,37 @@
     dunst
     hyprlock
     hyprpaper
-    
+
     # Screenshot and recording
     grimblast
     grim
     slurp
     wf-recorder
-    
+
     # Clipboard
     wl-clipboard
     cliphist
-    
+
     # File management
     dolphin
-    
+
     # Terminal
     kitty
-    
+
     # Authentication
     polkit_gnome
-    
+
     # System utilities
     brightnessctl
     pamixer
     playerctl
-    
+
     # Network management applet
     networkmanagerapplet
-    
+
     # Power management
     upower
-    
+
     # GTK theme management
     gtk3
     gtk4
@@ -81,10 +81,10 @@
     qt6.qtwayland
     libsForQt5.qt5ct
     qt6Packages.qt6ct
-    
+
     # Notification daemon dependencies
     libnotify
-    
+
     # Additional Wayland utilities
     wlr-randr
     wdisplays
@@ -103,10 +103,6 @@
     enable32Bit = true;
   };
 
-  # Sound settings (already configured in host, but ensuring compatibility)
-  sound.enable = false;
-  hardware.pulseaudio.enable = false;
-
   # Configure fonts for better rendering
   fonts = {
     packages = with pkgs; [
@@ -115,7 +111,12 @@
       noto-fonts-emoji
       liberation_ttf
       font-awesome
-      (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" ]; })
+      (nerdfonts.override {
+        fonts = [
+          "JetBrainsMono"
+          "FiraCode"
+        ];
+      })
     ];
     fontconfig = {
       enable = true;
@@ -137,3 +138,4 @@
     variant = "";
   };
 }
+

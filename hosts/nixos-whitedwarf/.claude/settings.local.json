@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__nixos__nixos_search",
+      "mcp__nixos__nixos_info",
+      "mcp__nixos__nixos_flakes_search",
+      "Bash(find:*)",
+      "Bash(rg:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(nix eval:*)",
+      "WebFetch(domain:www.chaotic.cx)",
+      "WebFetch(domain:aur.chaotic.cx)"
+    ],
+    "deny": []
+  }
+}
