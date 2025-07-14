@@ -88,16 +88,16 @@
     fsType = "f2fs";
     options = [ 
       "defaults"
+      "users"
+      "nofail"
       "x-systemd.automount"
       "x-systemd.device-timeout=10"
+      "uid=1001"
+      "gid=100"
+      "umask=002"
     ];
   };
 
-  # Ensure proper permissions on the mount point
-  systemd.tmpfiles.rules = [
-    "d /mnt/steam 0775 jason users -"
-  ];
- 
   # enable printer discovery
 services.avahi = {
   enable = true;
