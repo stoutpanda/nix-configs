@@ -23,7 +23,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   # Filesystem support
   boot.supportedFilesystems = [ "f2fs" ];
 
@@ -84,26 +84,25 @@
 
   # Mount microSD card for Steam
   fileSystems."/mnt/steam" = {
-    device = "/dev/disk/by-uuid/f5790dae-cd49-437c-9de7-49cc8c40981a";
+    device = "/dev/disk/by-uuid/5ae43b18-7107-46d9-922a-e00c6444d94b";
     fsType = "f2fs";
-    options = [ 
-      "defaults"
-      "users"
+    options = [
+      "auto"
+      "exec"
+      "rw"
       "nofail"
-      "x-systemd.automount"
-      "x-systemd.device-timeout=10"
       "uid=1001"
       "gid=100"
-      "umask=002"
+      "fmask=002"
+      "dmask=002"
     ];
   };
 
   # enable printer discovery
-services.avahi = {
-  enable = true;
-  nssmdns4 = true;
-  openFirewall = true;
-};
-
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
 }

@@ -18,7 +18,8 @@
       "mcp__nixos__home_manager_info",
       "Bash(nix-instantiate:*)",
       "Bash(lsblk:*)",
-      "Bash(nix flake check:*)"
+      "Bash(nix flake check:*)",
+      "WebFetch(domain:nix.catppuccin.com)"
     ],
     "deny": []
   }
