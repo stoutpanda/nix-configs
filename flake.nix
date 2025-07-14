@@ -1,5 +1,17 @@
 {
   description = "Nixos config flake for StoutPanda";
+  
+  nixConfig = {
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+      "https://chaotic-nyx.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "chaotic-nyx.cachix.org-1:HfnXSw4j04dMLJBJG7yDYPdFCGAtOMjXQWqA7BsnhRg="
+    ];
+  };
+  
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     #lix import 
@@ -16,7 +28,10 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";         
     agenix.follows = "home-manager-config/agenix"; 
   };
-  outputs = { self, nixpkgs, lix-module,  nixos-hardware, home-manager, home-manager-config, chaotic, agenix, ... }@inputs: {
+  outputs = { self, nixpkgs, lix-module,  nixos-hardware, home-manager, home-manager-config, chaotic, agenix, ... }@inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
     nixosConfigurations.nixos-whitedwarf = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
@@ -27,6 +42,17 @@
         ./hosts/nixos-whitedwarf/configuration.nix
          
       ];
+    };
+    
+    # Formatter for nix files
+    formatter.${system} = pkgs.nixpkgs-fmt;
+    
+    # Checks to run
+    checks.${system} = {
+      format = pkgs.runCommand "check-format" {} ''
+        ${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt --check ${./.}
+        touch $out
+      '';
     };
 };
 }
