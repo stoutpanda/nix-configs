@@ -7,6 +7,7 @@
   pkgs,
   inputs,
   chaotic,
+  lib,
   ...
 }:
 
@@ -22,6 +23,9 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  
+  # Filesystem support
+  boot.supportedFilesystems = [ "f2fs" ];
 
   # Default kernal
   #boot.kernelPackages = pkgs.linuxPackages_latest;
