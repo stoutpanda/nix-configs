@@ -10,7 +10,15 @@
       "mcp__nixos__nixos_info",
       "Bash(grep:*)",
       "mcp__nixos__home_manager_search",
-      "Bash(sudo blkid:*)"
+      "Bash(sudo blkid:*)",
+      "Bash(find:*)",
+      "Bash(find:*)",
+      "Bash(find:*)",
+      "mcp__nixos__nixos_flakes_stats",
+      "mcp__nixos__home_manager_info",
+      "Bash(nix-instantiate:*)",
+      "Bash(lsblk:*)",
+      "Bash(nix flake check:*)"
     ],
     "deny": []
   }
