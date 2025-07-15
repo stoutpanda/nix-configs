@@ -85,7 +85,7 @@
   # Mount microSD card for Steam
   fileSystems."/mnt/steam" = {
     device = "/dev/disk/by-uuid/5ae43b18-7107-46d9-922a-e00c6444d94b";
-    fsType = "f2fs";
+    fsType = "ext4";
     options = [
       "auto"
       "exec"
