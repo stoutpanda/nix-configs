@@ -19,7 +19,14 @@
       "Bash(nix-instantiate:*)",
       "Bash(lsblk:*)",
       "Bash(nix flake check:*)",
-      "WebFetch(domain:nix.catppuccin.com)"
+      "WebFetch(domain:nix.catppuccin.com)",
+      "Bash(ls:*)",
+      "Bash(sudo mount:*)",
+      "Bash(systemctl:*)",
+      "Bash(blkid:*)",
+      "Bash(sudo fsck:*)",
+      "Bash(echo:*)",
+      "Bash(mount)"
     ],
     "deny": []
   }
