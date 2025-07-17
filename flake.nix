@@ -1,18 +1,6 @@
 {
   description = "Nixos config flake for StoutPanda";
 
-  nixConfig = {
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-      "https://chaotic-nyx.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "chaotic-nyx.cachix.org-1:HfnXSw4j04dMLJBJG7yDYPdFCGAtOMjXQWqA7BsnhRg="
-
-    ];
-  };
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     #lix import
