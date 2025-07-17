@@ -32,7 +32,10 @@
 
   #chaotic zen kernel
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  services.scx.enable = true; # Uses scx_rustland by default
+  services.scx = {
+    enable = true;
+    package = pkgs.scx.rustscheds; # Use rustscheds instead of the default which has circular dependency
+  };
   programs.gamemode.enable = true;
   boot.initrd.luks.devices."luks-0a3129ec-d9a5-4676-9db3-8d35bb241213".device =
     "/dev/disk/by-uuid/0a3129ec-d9a5-4676-9db3-8d35bb241213";
