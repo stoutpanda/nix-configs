@@ -32,11 +32,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1752227483,
-        "narHash": "sha256-eetITGJfURryoHY5gfuE9/4sEV9aSgzhPxgsQgofNa8=",
+        "lastModified": 1752490162,
+        "narHash": "sha256-CFOuAHbc9PTt9HhjGQFf07bUCZKOahQ+vLt30J6u5fw=",
         "owner": "catppuccin",
         "repo": "nix",
-        "rev": "5f431aac1a4038c385e6de2d2384d943e4802d61",
+        "rev": "7dc907c010e1612729c5d76cf614b5f7811bfe23",
         "type": "github"
       },
       "original": {
@@ -57,11 +57,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1752446018,
-        "narHash": "sha256-5dj42G/lC8ZymYep/SwI/EE0mRYgcokh1lrtRANE1IU=",
+        "lastModified": 1752634677,
+        "narHash": "sha256-0xp9A8xlv6JSFWXZ4vMSlKjWWGb5ztwMaOg+vWzeYe8=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "5e7a7eebbd347ab8ca1a6112a6a5aba44ad3c505",
+        "rev": "b28aabd03e0fed75b19bd147757d10da645cdaf3",
         "type": "github"
       },
       "original": {
@@ -103,11 +103,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1752379414,
-        "narHash": "sha256-0R3slhrjrnzyxR/fAYy5UliZvSgaVS38YCESBdH5RJw=",
+        "lastModified": 1752701647,
+        "narHash": "sha256-aaL53zN58rduP4K96ElJCHLm00t2TnEuCvEw/GZo5Hc=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "51e77bb95540b7dd6c60f8fd65a0c472a2c9c3b7",
+        "rev": "488fa03304c2992af0a3e03ed551148f1a9e4c35",
         "type": "gitlab"
       },
       "original": {
@@ -246,11 +246,11 @@
         "zon2nix": "zon2nix"
       },
       "locked": {
-        "lastModified": 1752440980,
-        "narHash": "sha256-H0AZn/36l5cg7C6EaH4+bj7IWg3lp/Zaki4sV2TMaOc=",
+        "lastModified": 1752694137,
+        "narHash": "sha256-hgoWB/7xSLthEvAn+VDf03SLE3bKvZb2kdzG4ySkweI=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "1c0677faabf79b5dbaf96eef058e0a16983d0538",
+        "rev": "015efcf9e562ac89da49d50ba8b2b2612ef13d2a",
         "type": "github"
       },
       "original": {
@@ -296,11 +296,11 @@
         "zen-browser": "zen-browser"
       },
       "locked": {
-        "lastModified": 1752619563,
-        "narHash": "sha256-frKfWPus0E4P9a8hXg939HQ+RbmiJDFYk2Ro3nGLx2s=",
+        "lastModified": 1752725969,
+        "narHash": "sha256-vCyVyvmW+6SL2vbmMc2dOCXhnobpccrAFYWjeiECdh4=",
         "owner": "stoutpanda",
         "repo": "home-manager",
-        "rev": "ed84beef1c80f8f75d8a64638d7a58fa8750e00b",
+        "rev": "fa7a35c7321312a33cdfb9713e3bf6dc61ac1475",
         "type": "github"
       },
       "original": {
@@ -339,11 +339,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1752449767,
-        "narHash": "sha256-P8mQIrgIImASTlNkHPfKwGTmyZgku8EUt6cF52s3N/Y=",
+        "lastModified": 1752603129,
+        "narHash": "sha256-S+wmHhwNQ5Ru689L2Gu8n1OD6s9eU9n9mD827JNR+kw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1a4d8ffd320c2393b72e7ebc5b647122d5703056",
+        "rev": "e8c19a3cec2814c754f031ab3ae7316b64da085b",
         "type": "github"
       },
       "original": {
@@ -527,11 +527,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1751984180,
-        "narHash": "sha256-LwWRsENAZJKUdD3SpLluwDmdXY9F45ZEgCb0X+xgOL0=",
+        "lastModified": 1752480373,
+        "narHash": "sha256-JHQbm+OcGp32wAsXTE/FLYGNpb+4GLi5oTvCxwSoBOA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "9807714d6944a957c2e036f84b0ff8caf9930bc0",
+        "rev": "62e0f05ede1da0d54515d4ea8ce9c733f12d9f08",
         "type": "github"
       },
       "original": {
@@ -559,11 +559,11 @@
     },
     "private-secrets": {
       "locked": {
-        "lastModified": 1752297201,
-        "narHash": "sha256-gaYuCkiK0/rHSNpOwc+AwVWxfIHeSMcs/KSebmFdFCE=",
+        "lastModified": 1752725923,
+        "narHash": "sha256-nufUZyv8GZsrbnuQJq9b3UxsjqMKgVjpCc9nLEefbs4=",
         "ref": "refs/heads/main",
-        "rev": "1e68a9b29b16b83014df98ad6fa4dbe18f3bfbda",
-        "revCount": 8,
+        "rev": "98dbf6f3fdaba1c37b99c42b7e891b0d55210403",
+        "revCount": 10,
         "type": "git",
         "url": "ssh://git@github.com/stoutpanda/home-manager-private.git"
       },
