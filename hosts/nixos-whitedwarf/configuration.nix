@@ -68,7 +68,7 @@
       gutenprint
       epson-escpr # ESC/P-R Driver (generic driver)
       epson-escpr2 # ESC/P-R 2 Driver (generic driver)
-      epson-inkjet-printer-workforce # Proprietary CUPS drivers for Epson inkjet printers
+      # epson-inkjet-printer-workforce # Proprietary CUPS drivers for Epson inkjet printers
       epsonscan2
       brlaser # CUPS driver for Brother laser printers
     ];
