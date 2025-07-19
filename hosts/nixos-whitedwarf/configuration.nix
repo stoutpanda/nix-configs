@@ -66,8 +66,11 @@
     enable = true;
     drivers = with pkgs; [
       gutenprint
-      epson-escpr
+      epson-escpr # ESC/P-R Driver (generic driver)
+      epson-inkjet-printer-escpr2 # ESC/P-R 2 Driver (generic driver)
+      epson-inkjet-printer-workforce # Proprietary CUPS drivers for Epson inkjet printers
       epsonscan2
+      brlaser # CUPS driver for Brother laser printers
     ];
   };
 
