@@ -67,7 +67,7 @@
     drivers = with pkgs; [
       gutenprint
       epson-escpr # ESC/P-R Driver (generic driver)
-      epson-inkjet-printer-escpr2 # ESC/P-R 2 Driver (generic driver)
+      epson-escpr2 # ESC/P-R 2 Driver (generic driver)
       epson-inkjet-printer-workforce # Proprietary CUPS drivers for Epson inkjet printers
       epsonscan2
       brlaser # CUPS driver for Brother laser printers
@@ -77,7 +77,10 @@
   # Enable scanner support for multifunction printers
   hardware.sane = {
     enable = true;
-    extraBackends = [ pkgs.epsonscan2 pkgs.utsushi ];
+    extraBackends = [
+      pkgs.epsonscan2
+      pkgs.utsushi
+    ];
   };
 
   # Install printer management tools
