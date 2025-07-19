@@ -47,7 +47,9 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+  };
   # for asus laptop specifically
 
   # ASUS laptop control daemon
@@ -60,7 +62,26 @@
   hardware.keyboard.zsa.enable = true;
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      gutenprint
+      epson-escpr
+      epsonscan2
+    ];
+  };
+
+  # Enable scanner support for multifunction printers
+  hardware.sane = {
+    enable = true;
+    extraBackends = [ pkgs.epsonscan2 pkgs.utsushi ];
+  };
+
+  # Install printer management tools
+  environment.systemPackages = with pkgs; [
+    system-config-printer
+    simple-scan
+  ];
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
