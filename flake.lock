@@ -295,11 +295,11 @@
         "zen-browser": "zen-browser"
       },
       "locked": {
-        "lastModified": 1753063371,
-        "narHash": "sha256-m9aKfRWiCAGl79YGQD3xW1Kl9EMQPbUkUiHvExjquzU=",
+        "lastModified": 1753063604,
+        "narHash": "sha256-NjDB9NYbRerGXDxg9vvJ8hnrDIBVx7CQeZlsJTHYDDY=",
         "owner": "stoutpanda",
         "repo": "home-manager",
-        "rev": "8f304fa692150881b16cec53b2d81b25c47f6eb0",
+        "rev": "88c594975501d1c4878befbcdc31d722cfbe7e2f",
         "type": "github"
       },
       "original": {
@@ -510,11 +510,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1753063281,
-        "narHash": "sha256-oyMdHukQttVOQL4nFYbtHBTpF7EAGyjei/MVIG3F3Sg=",
+        "lastModified": 1753063520,
+        "narHash": "sha256-1YScTSJCZ61+2GnEmaHaUqEAKYM3Fi/K2KPPkdB4MIk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "4ce2065f6ef71f574fcd00533ab5e2f9e61b4895",
+        "rev": "3543be6dcb2859ec8da6deb91f12b0e7eb7d7ca0",
         "type": "github"
       },
       "original": {
@@ -574,11 +574,11 @@
     },
     "private-secrets": {
       "locked": {
-        "lastModified": 1753063284,
-        "narHash": "sha256-E49Nhx0ZvBIxI0i3zh7pCy9vM3jV1+QkBAcHXdozhK4=",
+        "lastModified": 1753063518,
+        "narHash": "sha256-1BHTi6D1rCBQE9m3NcRvPUsZwZhaBmk9oudNfOklgvY=",
         "ref": "refs/heads/main",
-        "rev": "504e4a376fb1c5573df9f026ae7eda370b81be13",
-        "revCount": 12,
+        "rev": "8a0d6f5d656ce06ab6dfb1f21b1155f747ea246c",
+        "revCount": 13,
         "type": "git",
         "url": "ssh://git@github.com/stoutpanda/home-manager-private.git"
       },
