@@ -34,7 +34,7 @@
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
   services.scx = {
     enable = true;
-    package = pkgs.scx_full;
+    package = pkgs.scx.full;
   };
   programs.gamemode.enable = true;
   boot.initrd.luks.devices."luks-0a3129ec-d9a5-4676-9db3-8d35bb241213".device =
