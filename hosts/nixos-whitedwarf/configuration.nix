@@ -89,6 +89,24 @@
     simple-scan
   ];
 
+  # Specialization for power-saving mode with disabled NVIDIA GPU
+  specialisation = {
+    power-saving.configuration = {
+      # Completely disable NVIDIA GPU
+      hardware.nvidiaOptimus.disable = true;
+      
+      # Force disable any NVIDIA services
+      hardware.nvidia = {
+        prime.offload.enable = lib.mkForce false;
+        prime.offload.enableOffloadCmd = lib.mkForce false;
+        prime.sync.enable = lib.mkForce false;
+      };
+      
+      # Disable NVIDIA settings GUI
+      hardware.nvidia.nvidiaSettings = false;
+    };
+  };
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
