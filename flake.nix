@@ -30,15 +30,18 @@
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      # Helper function for multi-system support
+      forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
     in
     {
       nixosConfigurations.nixos-whitedwarf = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
           lix-module.nixosModules.default
-          { nixpkgs.overlays = [ chaotic.overlays.default ]; }
+          { 
+            nixpkgs.overlays = [ chaotic.overlays.default ];
+            nixpkgs.hostPlatform = "x86_64-linux";
+          }
           agenix.nixosModules.default
           ./configuration.nix
           ./hosts/nixos-whitedwarf/configuration.nix
@@ -47,14 +50,21 @@
       };
 
       # Formatter for nix files
-      formatter.${system} = pkgs.nixpkgs-fmt;
+      formatter = forAllSystems (system:
+        nixpkgs.legacyPackages.${system}.nixpkgs-fmt
+      );
 
       # Checks to run
-      checks.${system} = {
-        format = pkgs.runCommand "check-format" { } ''
-          ${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt --check ${./.}
-          touch $out
-        '';
-      };
+      checks = forAllSystems (system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          format = pkgs.runCommand "check-format" { } ''
+            ${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt --check ${./.}
+            touch $out
+          '';
+        }
+      );
     };
 }
