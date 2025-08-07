@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     #lix import
     lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.3-1.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     #point everything to my home-manager flake
@@ -38,7 +38,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           lix-module.nixosModules.default
-          { 
+          {
             nixpkgs.overlays = [ chaotic.overlays.default ];
             nixpkgs.hostPlatform = "x86_64-linux";
           }
@@ -50,12 +50,11 @@
       };
 
       # Formatter for nix files
-      formatter = forAllSystems (system:
-        nixpkgs.legacyPackages.${system}.nixpkgs-fmt
-      );
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixpkgs-fmt);
 
       # Checks to run
-      checks = forAllSystems (system:
+      checks = forAllSystems (
+        system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
         in
